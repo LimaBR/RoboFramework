@@ -17,7 +17,14 @@ SharedResource::~SharedResource() {
 }
 
 int32_t SharedResource::init() {
+	return init(defaultResourceName);
+}
+
+int32_t SharedResource::init(const char* resourceName) {
 	hMutex = xSemaphoreCreateMutexStatic(&hMutexBuffer);
+	if(!hMutex){
+		return -1;
+	}
 	vQueueAddToRegistry(hMutex, resourceName);
 	return 0;
 }

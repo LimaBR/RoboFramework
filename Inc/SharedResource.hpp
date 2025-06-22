@@ -17,11 +17,12 @@ public:
 	SharedResource();
 	virtual ~SharedResource();
 	virtual int32_t init();
+	virtual int32_t init(const char* resourceName);
 	virtual int32_t take(uint32_t timeout);
 	virtual int32_t give();
 protected:
 	virtual int32_t taken();
-	const char* resourceName = "SharedResource";
+	const char* defaultResourceName = "SharedResource";
 	SemaphoreHandle_t hMutex;
 	StaticSemaphore_t hMutexBuffer;
 	TaskHandle_t taskLocking = nullptr;

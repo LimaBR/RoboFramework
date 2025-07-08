@@ -16,6 +16,7 @@ public:
 	virtual int32_t init() = 0;
 	virtual int32_t start(uint32_t periodInTicks, bool autoReload) = 0;
 	virtual int32_t stop() = 0;
+	virtual int32_t waitForCompletion(uint32_t timeoutInTicks) = 0;
 	virtual char* getName() = 0;
 	virtual int32_t setName(const char* name) = 0;
 };

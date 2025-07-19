@@ -13,7 +13,7 @@
 class UART : public SharedResource {
 public:
 	int32_t init() = 0;
-	virtual int32_t transmit(uint8_t* buffer, uint32_t size) = 0;
+	virtual int32_t transmit(const uint8_t* buffer, uint32_t size) = 0;
 	virtual int32_t receiveUntilLineIdle(uint8_t* buffer, uint32_t maxSize) = 0;
 };
 

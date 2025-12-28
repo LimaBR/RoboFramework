@@ -13,7 +13,7 @@
 class HIDRAW : public SharedResource {
 public:
 	virtual int32_t init() = 0;
-	virtual int32_t enqueueInPacket(uint8_t* buffer, uint32_t size) = 0;
+	virtual int32_t enqueueInPacket(const uint8_t* buffer, uint32_t size) = 0;
 	virtual int32_t receiveOutPacket(uint8_t* buffer, uint32_t maxSize) = 0;
 };
 
